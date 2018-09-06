@@ -21,7 +21,7 @@ public class HelloWorldController {
         return new WebhookResponse("Hello! " + obj, "Text " + obj);
     }
     @RequestMapping(value ="/", method = RequestMethod.GET)
-    public @ResponseBody ModelAndView mainPage(@RequestBody String obj){
+    public @RequestBody ModelAndView mainPage(@ResponseBody String obj){
 
     	System.out.println("Yo YO YO");
 
