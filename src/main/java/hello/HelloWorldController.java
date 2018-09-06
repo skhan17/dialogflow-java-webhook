@@ -11,6 +11,11 @@ import org.json.*;
 @Controller
 public class HelloWorldController {
 
+	@RequestMapping("/")
+    public String index() {
+        return "Greetings from Spring Boot!";
+    }
+
     @RequestMapping(value ="/webhook", method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
@@ -19,12 +24,5 @@ public class HelloWorldController {
         JSONObject json = new JSONObject(obj);
 
         return new WebhookResponse("Hello! " + obj, "Text " + obj);
-    }
-    @RequestMapping(value ="/", method = RequestMethod.GET)
-    public @RequestBody ModelAndView mainPage(@ResponseBody String obj){
-
-    	System.out.println("Yo YO YO");
-
-        return new ModelAndView("HELLO");
     }
 }
