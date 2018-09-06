@@ -15,6 +15,9 @@ public class HelloWorldController {
 
         System.out.println(obj);
 
+        JSONParser parser = new JSONParser(); 
+        JSONObject json = (JSONObject) parser.parse(obj);
+
         return new WebhookResponse("Hello! " + obj, "Text " + obj);
     }
 }
