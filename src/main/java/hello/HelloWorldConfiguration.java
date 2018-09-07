@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloWorldConfiguration {
 
 	public static void main(String[] args) {
-		System.out.println("IN MAIN CLASS");
-
 		SpringApplication.run(HelloWorldConfiguration.class, args);
+
 	}
 
 }

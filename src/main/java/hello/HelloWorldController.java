@@ -25,5 +25,14 @@ public class HelloWorldController {
         System.out.println("------------------");
         System.out.println("query");
         return new WebhookResponse("You wrote: " + query, "You wrote: " + query);
+    
     }
+    
+    @RequestMapping("/")
+    public String index() {
+        return "Greetings from Spring Boot!";
+    }
+
+
 }
+
