@@ -7,8 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloWorldConfiguration {
 
 	public static void main(String[] args) {
+
+		// array of tickets
 		SpringApplication.run(HelloWorldConfiguration.class, args);
 
 	}
+
+	//public tickets[] retrunalltix()
 
 }
