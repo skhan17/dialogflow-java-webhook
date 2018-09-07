@@ -16,7 +16,7 @@ public class HelloWorldController {
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
         JSONObject json = new JSONObject(obj);
-        JSONObject result = json.getJSONOBject("result");
+        JSONObject result = json.getJSONObject("result");
         String query = result.get("resolvedQuery");
 
         System.out.println(json);
