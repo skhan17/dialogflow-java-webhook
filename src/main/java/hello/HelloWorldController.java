@@ -17,7 +17,7 @@ public class HelloWorldController {
 
         JSONObject json = new JSONObject(obj);
         JSONObject result = json.getJSONObject("result");
-        JSONObject query = result.get("resolvedQuery");
+        String query = result.get("resolvedQuery").toString();
 
         System.out.println(json);
         System.out.println("------------------");
