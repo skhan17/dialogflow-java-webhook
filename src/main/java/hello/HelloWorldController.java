@@ -24,14 +24,14 @@ public class HelloWorldController {
         JSONObject result = json.getJSONObject("result");
         JSONArray context = result.getJSONArray("context");
 
-        for(int i = 0; i < context.length; i++){
+        for(int i = 0; i < context.length(); i++){
         	JSONObject current = context.getJSONObject(i);
         	if(((Integer) current.get("lifespan")) == 1){
         		JSONObject params = current.getJSONObject("parameters");
         		firstName = params.get("given-name").toString();
         		lastName = params.get("last-name").toString();
         		airlines = params.get("Airlines").toString();
-        		numOfBags = parans.get("number");
+        		numOfBags = params.get("number");
 			}
         }
 
