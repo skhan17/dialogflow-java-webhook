@@ -7,7 +7,7 @@ import java.util.*;
 @SpringBootApplication
 public class HelloWorldConfiguration {
 
-	public ArrayList<Ticket> arrTickets;
+	public static ArrayList<Ticket> arrTickets;
 
 	public static void main(String[] args) {
 
