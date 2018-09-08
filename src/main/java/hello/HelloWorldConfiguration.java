@@ -9,7 +9,7 @@ public class HelloWorldConfiguration {
 
 	public static ArrayList<Ticket> arrTickets;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, MalformedURLException{
 
 		Ticket t1 = new Ticket("Shyaan Khan");
 		Ticket t2 = new Ticket("Daniel Schofield");
