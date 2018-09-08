@@ -43,9 +43,11 @@ public class HelloWorldController {
         	if(ticket.name.equals(firstName+" "+lastName)){
         		ticket.setAirlines(airlines);
         		ticket.setNumBags(numOfBags);
+        		System.out.println(ticket.airlinePrefix+"-"+ticket.flightNumber);
+        		break;
         	}
         }
-        System.out.println(HelloWorldConfiguration.returnTix());
+        
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
         System.out.println("------------------");
