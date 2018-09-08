@@ -23,7 +23,7 @@ public class HelloWorldController {
 
         JSONObject json = new JSONObject(obj);
         JSONObject result = json.getJSONObject("result");
-        JSONArray context = result.getJSONArray("context");
+        JSONArray context = result.getJSONArray("contexts");
 
         for(int i = 0; i < context.length(); i++){
         	JSONObject current = context.getJSONObject(i);
