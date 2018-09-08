@@ -45,9 +45,7 @@ public class HelloWorldController{
         		ticket.setAirlines(airlines);
         		ticket.setNumBags(numOfBags);
 
-        		String urlString = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/JBU/1201/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
-        		URL url = new URL(urlString);
-        		URLConnection conn = url.openConnection();
+
         		
 
         		BufferedReader br = null;
@@ -55,6 +53,9 @@ public class HelloWorldController{
 				String line;
 
         		try{
+                    String urlString = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/JBU/1201/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
+                    URL url = new URL(urlString);
+                    URLConnection conn = url.openConnection();
         			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 					while ((line = br.readLine()) != null) {
 						sb.append(line);
