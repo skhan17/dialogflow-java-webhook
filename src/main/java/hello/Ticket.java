@@ -25,7 +25,7 @@ public class Ticket{
 		}
 		else if(airlines.equals("Southwest Airlines")){
 			this.flightNumber = "6181";
-			this.airlinePrefix = "SWA"
+			this.airlinePrefix = "SWA";
 		}
 	}
 
