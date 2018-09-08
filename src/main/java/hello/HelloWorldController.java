@@ -60,8 +60,8 @@ public class HelloWorldController throws MalformedURLException, IOException {
         			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 					while ((line = br.readLine()) != null) {
 						sb.append(line);
-				}
-        		catch(MalformedURLException ml, IOException ex){
+				    }
+        		}catch(MalformedURLException ml, IOException ex){
         			ex.printStackTrace();
         		}finally{
         			if (br != null) {
