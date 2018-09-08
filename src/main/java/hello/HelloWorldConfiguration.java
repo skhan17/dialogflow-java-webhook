@@ -31,7 +31,7 @@ public class HelloWorldConfiguration {
 		arrTickets = tix;
 	}
 
-	public ArrayList<Ticket> returnTix(){
+	public static ArrayList<Ticket> returnTix(){
 		return arrTickets;
 	}
 
