@@ -14,7 +14,7 @@ import java.net.*;
 
 
 @RestController
-public class HelloWorldController throws MalformedURLException, IOException {
+public class HelloWorldController{
 	public String firstName;
     public String lastName;
    	public String airlines;	
@@ -22,8 +22,6 @@ public class HelloWorldController throws MalformedURLException, IOException {
 
     @RequestMapping(value ="/webhook", method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
-
-    	
 
         JSONObject json = new JSONObject(obj);
         JSONObject result = json.getJSONObject("result");
