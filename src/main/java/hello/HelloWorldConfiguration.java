@@ -17,7 +17,7 @@ public class HelloWorldConfiguration {
 		Ticket t4 = new Ticket("Mikayla Weiner");
 		Ticket t5 = new Ticket("Abir Rashid");
 
-		tix = new ArrayList<Ticket>();
+		ArrayList<Ticket> tix = new ArrayList<Ticket>();
 		tix.add(t1);
 		tix.add(t2);
 		tix.add(t3);

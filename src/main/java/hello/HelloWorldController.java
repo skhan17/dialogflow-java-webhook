@@ -37,7 +37,7 @@ public class HelloWorldController {
         }
 
 
-        System.out.println(HelloWorldConfiguration.tix);
+        System.out.println(HelloWorldConfiguration.arrTickets);
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
         System.out.println("------------------");
