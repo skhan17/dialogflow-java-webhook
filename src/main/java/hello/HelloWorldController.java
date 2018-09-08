@@ -15,15 +15,33 @@ public class HelloWorldController {
     @RequestMapping(value ="/webhook", method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
+    	String firstName;
+    	String lastName;
+    	String airlines;
+    	String numOfBags;
+
         JSONObject json = new JSONObject(obj);
         JSONObject result = json.getJSONObject("result");
-        String query = result.get("resolvedQuery").toString();
+        JSONArray context = result.getJSONArray("context");
 
-        System.out.println(json);
+        for(int i = 0; i < context.length; i++){
+        	JSONObject current = context.getJSONObject(i);
+        	if(((Integer) current.get("lifespan")) == 1){
+        		JSONObject params = current.getJSONObject("parameters");
+        		firstName = params.get("given-name").toString();
+        		lastName = params.get("last-name").toString();
+        		airlines = params.get("Airlines").toString();
+        		numOfBags = parans.get("number");
+			}
+        }
+
+
+
+        System.out.println(firstName + " " + lastName);
         System.out.println("------------------");
-        System.out.println(result);
+        System.out.println(airlines);
         System.out.println("------------------");
-        System.out.println(query);
+        System.out.println(numOfBags);
         return new WebhookResponse("You wrote: \n\n" + json, "You wrote: \n\n" + json);
     
     }
