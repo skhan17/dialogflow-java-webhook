@@ -29,14 +29,21 @@ public class HelloWorldController {
         	JSONObject current = context.getJSONObject(i);
         	if(((Integer) current.get("lifespan")) == 1){
         		JSONObject params = current.getJSONObject("parameters");
-        		firstName = params.get("given-name").toString();
+        		firstName = params.get("any").toString();
         		lastName = params.get("last-name").toString();
         		airlines = params.get("Airlines").toString();
         		numOfBags = params.get("number").toString();
 			}
         }
 
+        ArrayList<Ticket> allTickets = db();
 
+        for(Ticket ticket: allTickets){
+        	if(ticket.name.equals(firstName+" "+lastName)){
+        		ticket.setAirlines(airlines);
+        		ticket.setNumBags(numOfBags);
+        	}
+        }
         System.out.println(HelloWorldConfiguration.returnTix());
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
@@ -51,6 +58,23 @@ public class HelloWorldController {
     @RequestMapping("/")
     public String index() {
         return "Hello SoftBank Robotics!";
+    }
+
+    public ArrayList<Ticket> db(){
+
+    	Ticket t1 = new Ticket("Shyaan Khan");
+		Ticket t2 = new Ticket("Daniel Schofield");
+		Ticket t3 = new Ticket("Justin Frankert");
+		Ticket t4 = new Ticket("Mikayla Weiner");
+		Ticket t5 = new Ticket("Abir Rashid");
+
+    	ArrayList<Ticket> tix = new ArrayList<Ticket>();
+		tix.add(t1);
+		tix.add(t2);
+		tix.add(t3);
+		tix.add(t4);
+		tix.add(t5);
+		return tix;
     }
 
 
