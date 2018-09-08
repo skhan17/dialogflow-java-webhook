@@ -7,7 +7,7 @@ import java.util.*;
 @SpringBootApplication
 public class HelloWorldConfiguration {
 
-	public ArrayList<Tickets> tix;
+	public ArrayList<Ticket> arrTickets;
 
 	public static void main(String[] args) {
 
@@ -27,8 +27,12 @@ public class HelloWorldConfiguration {
 
 	}
 
-	public ArrayList<Tickets> returnTix(){
-		return tix;
+	public void setArrTicket(ArrayList<Ticket> tix){
+		arrTickets = tix;
+	}
+
+	public ArrayList<Ticket> returnTix(){
+		return arrTickets;
 	}
 
 }
