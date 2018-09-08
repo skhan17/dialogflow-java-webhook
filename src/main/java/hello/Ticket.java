@@ -11,11 +11,11 @@ public class Ticket{
 		this.name = name;
 	}	
 
-	public setAirlines(String airlines){
+	public void setAirlines(String airlines){
 		this.airlines = airlines;
 	}
 
-	public setNumBags(String numOfBags){
+	public void setNumBags(String numOfBags){
 		this.numOfBags = numOfBags;
 	}
 
