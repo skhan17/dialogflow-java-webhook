@@ -37,7 +37,8 @@ public class HelloWorldController {
         }
 
 
-
+        System.out.println(HelloWorldConfiguration.returnTix);
+        System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
         System.out.println("------------------");
         System.out.println(airlines);
