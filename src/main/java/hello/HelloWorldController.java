@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.json.*;
 import java.util.*;
 import java.io.*;
-import java.net.HttpURLConnection;
+import java.net.*;
 
 
 @RestController
