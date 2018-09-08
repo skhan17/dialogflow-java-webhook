@@ -52,14 +52,16 @@ public class HelloWorldController {
         		 		"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/JBU/1201/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false"
         		 		).openConnection()));
         		 conn.setRequestMethod("GET");
+			    StringBuilder str = new StringBuilder();
 
         		BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+
       			String line;
       			while ((line = rd.readLine()) != null) {
-         			result.append(line);
+         			str.append(line);
       			}
       			rd.close();
-      			System.out.print(result.toString());
+      			System.out.print(str.toString());
         		break;
         	}
         }
