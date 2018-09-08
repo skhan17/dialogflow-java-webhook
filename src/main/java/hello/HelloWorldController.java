@@ -31,7 +31,7 @@ public class HelloWorldController {
         		firstName = params.get("given-name").toString();
         		lastName = params.get("last-name").toString();
         		airlines = params.get("Airlines").toString();
-        		numOfBags = params.get("number");
+        		numOfBags = params.get("number").toString();
 			}
         }
 
