@@ -61,7 +61,7 @@ public class HelloWorldController throws MalformedURLException, IOException {
 					while ((line = br.readLine()) != null) {
 						sb.append(line);
 				    }
-        		}catch(MalformedURLException ml, IOException ex){
+        		}catch(IOException ex){
         			ex.printStackTrace();
         		}finally{
         			if (br != null) {
