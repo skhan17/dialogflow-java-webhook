@@ -11,14 +11,15 @@ import org.json.*;
 
 @RestController
 public class HelloWorldController {
+	public String firstName;
+    public String lastName;
+   	public String airlines;	
+    public String numOfBags;
 
     @RequestMapping(value ="/webhook", method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
 
-    	String firstName;
-    	String lastName;
-    	String airlines;
-    	String numOfBags;
+    	
 
         JSONObject json = new JSONObject(obj);
         JSONObject result = json.getJSONObject("result");
