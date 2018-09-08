@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.ui.Model;
 import org.json.*;
 import java.util.*;
+import java.io.*;
+import java.net.HttpURLConnection;
+
 
 @RestController
 public class HelloWorldController {
@@ -43,11 +46,24 @@ public class HelloWorldController {
         	if(ticket.name.equals(firstName+" "+lastName)){
         		ticket.setAirlines(airlines);
         		ticket.setNumBags(numOfBags);
-        		System.out.println(ticket.airlinePrefix+"-"+ticket.flightNumber);
+
+        		 HttpURLConnection conn = (HttpURLConnection) ((
+        		 	new URL(
+        		 		"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/JBU/1201/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false"
+        		 		).openConnection()));
+        		 conn.setRequestMethod("GET");
+
+        		BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+      			String line;
+      			while ((line = rd.readLine()) != null) {
+         			result.append(line);
+      			}
+      			rd.close();
+      			System.out.print(result.toString());
         		break;
         	}
         }
-        
+
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
         System.out.println("------------------");
