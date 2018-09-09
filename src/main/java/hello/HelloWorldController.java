@@ -119,7 +119,7 @@ public class HelloWorldController{
                     String deptTimeEdit = departureTime.substring(0, departureTime.indexOf("T"));
                     String deptDate = deptTimeEdit.replace("-", "");
                     response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
-                    arrivalAirport+" with "+airlines+" ("+ticket.airlinePrefix+" "+ticket.flightNumber+"). The flight is scheduled to depart "+formattedDepartureTime+
+                    arrivalAirport+" with "+ticket.airlines+" ("+ticket.airlinePrefix+" "+ticket.flightNumber+"). The flight is scheduled to depart "+formattedDepartureTime+
                     " and will arrive at "+formattedArrivalTime+". "+terminalGateString+
                     ". To view more flight details, visit https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
                         "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport;

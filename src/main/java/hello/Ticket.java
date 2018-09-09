@@ -13,10 +13,16 @@ public class Ticket{
 		this.name = name;
 		this.airlinePrefix = airlinePrefix;
 		this.flightNumber = flightNumber;
+		if(airlinePrefix.equals("DL")){
+			this.airlines = "Delta Airlines";
+		}else if(airlinePrefix.equals("UA")){
+			this.airlines = "United Airlines"
+		}
+
 	}	
 
 	public void setAirlines(String airlines){
-		this.airlines = airlines;
+		//this.airlines = airlines;
 		/*if(airlines.equals("Delta Airlines")){
 			this.flightNumber = "854";
 			this.airlinePrefix = "DL";
