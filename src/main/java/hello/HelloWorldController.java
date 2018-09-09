@@ -11,6 +11,7 @@ import org.json.*;
 import java.util.*;
 import java.io.*;
 import java.net.*;
+import java.lang.*;
 
 
 @RestController
@@ -94,7 +95,13 @@ public class HelloWorldController{
         	}
         }
 
-        String response = firstName+", I've got you all checked in! Here is your flight information: \n\n\n"+"Name: "+firstName+" "+lastName+"\n";
+        String formattedDepartureTime = formatTime(departureTime);
+        String formattedArrivalTime = formatTime(arrivalTime);
+
+
+        String response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
+        arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
+        " and will arrive at "+formattedArrivalTime;
 
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
@@ -102,7 +109,7 @@ public class HelloWorldController{
         System.out.println(airlines);
         System.out.println("------------------");
         System.out.println(numOfBags);
-        return new WebhookResponse("You wrote: \n\n" + firstName, "You wrote: \n\n" + firstName);
+        return new WebhookResponse(response, response);
     
     }
     
@@ -128,6 +135,27 @@ public class HelloWorldController{
 		return tix;
     }
 
+    public String formatTime(String time){
+        String formattedTime = "";
+        //2018-09-08T13:46:00.000
+        String date = time.substring(0, time.indexOf("T"));
+        String t = time.substring(time.indexOf("T")+1, time.length);
+        String newDate = date.substring(5. 7) +"/"+date.substring(8,10)+"/"+date.substring(0,5);
+        String newT = t.substring(0, 5);
+        String finalT = "";
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
+            Date dateObj = sdf.parse(newT);
+            finalT = new SimpleDateFormat("K:mm").format(dateObj).toString();
+        } catch (final ParseException e) {
+            e.printStackTrace();
+        }
+        
+
+       formattedTime = newDate+" "+finalT;
+        return formattedTime;
+    }
 
 }
 
