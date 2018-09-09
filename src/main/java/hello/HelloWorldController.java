@@ -45,6 +45,8 @@ public class HelloWorldController{
 			}
         }
 
+        System.out.println(json.toString());
+
         ArrayList<Ticket> allTickets = db();
 
         for(Ticket ticket: allTickets){
@@ -76,8 +78,6 @@ public class HelloWorldController{
 						}
 					}
         		}
-      			System.out.print(sb.toString());
-
                 JSONObject apiJson = new JSONObject(sb.toString());
                 JSONArray flightStatuses = apiJson.getJSONArray("flightStatuses");
                 for(int j = 0; j < flightStatuses.length(); j++){
@@ -103,12 +103,7 @@ public class HelloWorldController{
         arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
         " and will arrive at "+formattedArrivalTime;
 
-        System.out.println("------------------");
-        System.out.println(firstName + " " + lastName);
-        System.out.println("------------------");
-        System.out.println(airlines);
-        System.out.println("------------------");
-        System.out.println(numOfBags);
+
         return new WebhookResponse(response, response);
     
     }
