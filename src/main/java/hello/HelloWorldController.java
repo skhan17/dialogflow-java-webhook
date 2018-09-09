@@ -11,7 +11,7 @@ import org.json.*;
 import java.util.*;
 import java.io.*;
 import java.net.*;
-import java.lang.*;
+import java.text.*;
 
 
 @RestController
@@ -139,7 +139,7 @@ public class HelloWorldController{
         String formattedTime = "";
         //2018-09-08T13:46:00.000
         String date = time.substring(0, time.indexOf("T"));
-        String t = time.substring(time.indexOf("T")+1, time.length);
+        String t = time.substring(time.indexOf("T")+1, time.length());
         String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,5);
         String newT = t.substring(0, 5);
         String finalT = "";
