@@ -19,6 +19,12 @@ public class HelloWorldController{
     public String lastName;
    	public String airlines;	
     public String numOfBags;
+    public String departureAirport;
+    public String arrivalAirport;
+    public String departureTime;
+    public String arrivalTime;
+    public String departureTerminal;
+    public String departureGate;
 
     @RequestMapping(value ="/webhook", method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
@@ -45,15 +51,13 @@ public class HelloWorldController{
         		ticket.setAirlines(airlines);
         		ticket.setNumBags(numOfBags);
 
-
-        		
-
         		BufferedReader br = null;
 				StringBuilder sb = new StringBuilder();
 				String line;
 
         		try{
-                    String urlString = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/JBU/1201/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
+                    String urlString = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
+                    +ticket.airlinePrefix+"/"+ticket.flightNumber+"/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
                     URL url = new URL(urlString);
                     URLConnection conn = url.openConnection();
         			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -72,9 +76,25 @@ public class HelloWorldController{
 					}
         		}
       			System.out.print(sb.toString());
+
+                JSONObject apiJson = new JSONObject(sb.toString());
+                JSONArray flightStatuses = apiJson.getJSONArray("flightStatuses");
+                for(JSONObject flightStatus: flightStatuses){
+                    departureAirport = flightStatus.get("departureAirportFsCode").toString();
+                    arrivalAirport = flightStatus.get("arrivalAirportFsCode").toString();
+                    JSONObject departureDate = flightStatus.getJSONObject("departureDate");
+                    departureTime = departureDate.get("dateLocal").toString();
+                    JSONObject arrivalDate = flightStatus.getJSONObject("arrivalDate");
+                    arrivalTime = arrivalDate.get("dateLocal").toString(); 
+                }
+
+
         		break;
         	}
         }
+
+        String response = firstName+", I've got you all checked in! Here is your flight information: \n\n\n"
+        +"Name: "+firstName+" "+lastName+"\n"+
 
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
@@ -82,7 +102,7 @@ public class HelloWorldController{
         System.out.println(airlines);
         System.out.println("------------------");
         System.out.println(numOfBags);
-        return new WebhookResponse("You wrote: \n\n" + json, "You wrote: \n\n" + json);
+        return new WebhookResponse("You wrote: \n\n" + firstName, "You wrote: \n\n" + firstName);
     
     }
     
