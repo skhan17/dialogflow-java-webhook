@@ -138,9 +138,18 @@ public class HelloWorldController{
     public String formatTime(String time){
         String formattedTime = "";
         //2018-09-08T13:46:00.000
+        String ampm = "";
+
+        if(((Integer) time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
+            ampm = "pm"
+        }
+        else{
+            ampm = "am";
+        }
+
         String date = time.substring(0, time.indexOf("T"));
         String t = time.substring(time.indexOf("T")+1, time.length());
-        String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,5);
+        String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,4);
         String newT = t.substring(0, 5);
         String finalT = "";
 
@@ -153,7 +162,7 @@ public class HelloWorldController{
         }
         
 
-       formattedTime = newDate+" "+finalT;
+       formattedTime = newDate+" "+finalT+ampm;
         return formattedTime;
     }
 
