@@ -52,7 +52,7 @@ public class HelloWorldController{
 
         ArrayList<Ticket> allTickets = db();
 
-        String response = "Sorry $any, I couldn't find your ticket. Please double check your name.";
+        String response = "Sorry "+firstName+" I couldn't find your ticket. Please double check your name.";
 
         for(Ticket ticket: allTickets){
         	if(ticket.name.equalsIgnoreCase(firstName+" "+lastName)){
@@ -103,10 +103,13 @@ public class HelloWorldController{
                     String formattedDepartureTime = formatTime(departureTime);
                     String formattedArrivalTime = formatTime(arrivalTime);
 
-
+                    String deptTimeEdit = departureTime.substring(0, departureTime.indexOf("T"));
+                    String deptDate = deptTimeEdit.replace("-", "");
                     response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
                     arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
-                    " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate;
+                    " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate+
+                    ". https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
+                        "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport;
 
         		break;
         	}
