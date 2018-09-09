@@ -53,7 +53,7 @@ public class HelloWorldController{
         ArrayList<Ticket> allTickets = db();
 
         for(Ticket ticket: allTickets){
-        	if(ticket.name.equals(firstName+" "+lastName)){
+        	if(ticket.name.equalsIgnoreCase(firstName+" "+lastName)){
         		ticket.setAirlines(airlines);
         		ticket.setNumBags(numOfBags);
 
