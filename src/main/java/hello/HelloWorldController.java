@@ -138,6 +138,7 @@ public class HelloWorldController{
 		tix.add(t3);
 		tix.add(t4);
 		tix.add(t5);
+        tix.add(t6);
 		return tix;
     }
 
