@@ -79,7 +79,8 @@ public class HelloWorldController{
 
                 JSONObject apiJson = new JSONObject(sb.toString());
                 JSONArray flightStatuses = apiJson.getJSONArray("flightStatuses");
-                for(JSONObject flightStatus: flightStatuses){
+                for(int j = 0; j < flightStatuses.length(); j++){
+                    JSONObject flightStatus = flightStatuses.getJSONObject(j);
                     departureAirport = flightStatus.get("departureAirportFsCode").toString();
                     arrivalAirport = flightStatus.get("arrivalAirportFsCode").toString();
                     JSONObject departureDate = flightStatus.getJSONObject("departureDate");
@@ -93,8 +94,7 @@ public class HelloWorldController{
         	}
         }
 
-        String response = firstName+", I've got you all checked in! Here is your flight information: \n\n\n"
-        +"Name: "+firstName+" "+lastName+"\n"+
+        String response = firstName+", I've got you all checked in! Here is your flight information: \n\n\n"+"Name: "+firstName+" "+lastName+"\n";
 
         System.out.println("------------------");
         System.out.println(firstName + " " + lastName);
