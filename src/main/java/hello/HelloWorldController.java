@@ -138,7 +138,7 @@ public class HelloWorldController{
     public String formatTime(String time){
         String formattedTime = "";
         //2018-09-08T13:46:00.000
-        if(time.length>0){
+        if(!time.equals(null){
 
 
             String ampm = "";
