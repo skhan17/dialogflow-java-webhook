@@ -138,31 +138,35 @@ public class HelloWorldController{
     public String formatTime(String time){
         String formattedTime = "";
         //2018-09-08T13:46:00.000
-        String ampm = "";
+        if(time.length()>0){
 
-        if(Integer.parseInt(time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
-            ampm = "pm";
+
+            String ampm = "";
+
+            if(Integer.parseInt(time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
+                ampm = "pm";
+            }
+            else{
+                ampm = "am";
+            }
+
+            String date = time.substring(0, time.indexOf("T"));
+            String t = time.substring(time.indexOf("T")+1, time.length());
+            String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,4);
+            String newT = t.substring(0, 5);
+            String finalT = "";
+
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
+                Date dateObj = sdf.parse(newT);
+                finalT = new SimpleDateFormat("K:mm").format(dateObj).toString();
+            } catch (final ParseException e) {
+                e.printStackTrace();
+            }
+            
+
+           formattedTime = newDate+" "+finalT+ampm;
         }
-        else{
-            ampm = "am";
-        }
-
-        String date = time.substring(0, time.indexOf("T"));
-        String t = time.substring(time.indexOf("T")+1, time.length());
-        String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,4);
-        String newT = t.substring(0, 5);
-        String finalT = "";
-
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
-            Date dateObj = sdf.parse(newT);
-            finalT = new SimpleDateFormat("K:mm").format(dateObj).toString();
-        } catch (final ParseException e) {
-            e.printStackTrace();
-        }
-        
-
-       formattedTime = newDate+" "+finalT+ampm;
         return formattedTime;
     }
 
