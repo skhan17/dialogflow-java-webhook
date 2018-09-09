@@ -45,9 +45,9 @@ public class HelloWorldController{
 			}
         }
 
-        //System.out.println(json.toString());
+        System.out.println(json.toString());
 
-       // System.out.println("---------");
+       System.out.println("---------");
 
 
         ArrayList<Ticket> allTickets = db();
