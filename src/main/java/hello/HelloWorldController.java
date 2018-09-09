@@ -115,11 +115,11 @@ public class HelloWorldController{
 
     public ArrayList<Ticket> db(){
 
-    	Ticket t1 = new Ticket("Shyaan Khan");
-		Ticket t2 = new Ticket("Daniel Schofield");
-		Ticket t3 = new Ticket("Justin Frankert");
-		Ticket t4 = new Ticket("Mikayla Weiner");
-		Ticket t5 = new Ticket("Abir Rashid");
+    	Ticket t1 = new Ticket("Shyaan Khan", "SWA", "2664");
+		Ticket t2 = new Ticket("Daniel Schofield", "DL", "2216");
+		Ticket t3 = new Ticket("Justin Frankert", "SWA", "2216");
+		Ticket t4 = new Ticket("Mikayla Weiner", "UN", "2063");
+		Ticket t5 = new Ticket("Alizer Khan", "UN", "888");
 
     	ArrayList<Ticket> tix = new ArrayList<Ticket>();
 		tix.add(t1);
@@ -132,36 +132,34 @@ public class HelloWorldController{
 
     public String formatTime(String time){
         String formattedTime = "";
-        //2018-09-08T13:46:00.000
-        /*if(!time.equals(null)){
+        //2018-09-08T13:46:00.
 
 
-            String ampm = "";
+        String ampm = "";
 
-            if(Integer.parseInt(time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
-                ampm = "pm";
-            }
-            else{
-                ampm = "am";
-            }
+        if(Integer.parseInt(time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
+            ampm = "pm";
+        }
+        else{
+            ampm = "am";
+        }
 
-            String date = time.substring(0, time.indexOf("T"));
-            String t = time.substring(time.indexOf("T")+1, time.length());
-            String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,4);
-            String newT = t.substring(0, 5);
-            String finalT = "";
+        String date = time.substring(0, time.indexOf("T"));
+        String t = time.substring(time.indexOf("T")+1, time.length());
+        String newDate = date.substring(5, 7) +"/"+date.substring(8,10)+"/"+date.substring(0,4);
+        String newT = t.substring(0, 5);
+        String finalT = "";
 
-            try {
-                SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
-                Date dateObj = sdf.parse(newT);
-                finalT = new SimpleDateFormat("K:mm").format(dateObj).toString();
-            } catch (final ParseException e) {
-                e.printStackTrace();
-            }
-            
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("H:mm");
+            Date dateObj = sdf.parse(newT);
+            finalT = new SimpleDateFormat("K:mm").format(dateObj).toString();
+        } catch (final ParseException e) {
+            e.printStackTrace();
+        }
+        
 
-           formattedTime = newDate+" "+finalT+ampm;
-        }*/
+       formattedTime = newDate+" "+finalT+ampm;
         return formattedTime;
     }
 

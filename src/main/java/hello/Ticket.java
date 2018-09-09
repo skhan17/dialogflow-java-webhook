@@ -9,13 +9,15 @@ public class Ticket{
 	public String flightNumber;
 	public String airlinePrefix;
 
-	public Ticket(String name){
+	public Ticket(String name, String airlinePrefix, String flightNumber){
 		this.name = name;
+		this.airlinePrefix = airlinePrefix;
+		this.flightNumber = flightNumber;
 	}	
 
 	public void setAirlines(String airlines){
 		this.airlines = airlines;
-		if(airlines.equals("Delta Airlines")){
+		/*if(airlines.equals("Delta Airlines")){
 			this.flightNumber = "854";
 			this.airlinePrefix = "DL";
 		}
@@ -26,7 +28,7 @@ public class Ticket{
 		else if(airlines.equals("Southwest Airlines")){
 			this.flightNumber = "6181";
 			this.airlinePrefix = "SWA";
-		}
+		}*/
 	}
 
 	public void setNumBags(String numOfBags){
