@@ -106,7 +106,7 @@ public class HelloWorldController{
                     String deptTimeEdit = departureTime.substring(0, departureTime.indexOf("T"));
                     String deptDate = deptTimeEdit.replace("-", "");
                     response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
-                    arrivalAirport+" with "+airlines+"("+ticket.airlinePrefix+" "+ticket.flightNumber+"). The flight is scheduled to depart "+formattedDepartureTime+
+                    arrivalAirport+" with "+airlines+" ("+ticket.airlinePrefix+" "+ticket.flightNumber+"). The flight is scheduled to depart "+formattedDepartureTime+
                     " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate+
                     ". To view more flight details, visit https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
                         "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport+")";
@@ -129,8 +129,8 @@ public class HelloWorldController{
 
     	Ticket t1 = new Ticket("Shyaan Khan", "UA", "2363");
 		Ticket t2 = new Ticket("Daniel Schofield", "DL", "2520");
-		Ticket t3 = new Ticket("Justin Frankert", "WN", "1998");
-		Ticket t4 = new Ticket("Mikayla Weiner", "UA", "2063");
+		Ticket t3 = new Ticket("Justin Frankert", "SWA", "1998");
+		Ticket t4 = new Ticket("Laura Meyer", "UA", "2063");
 		Ticket t5 = new Ticket("Alizer Khan", "UA", "888");
 
 
