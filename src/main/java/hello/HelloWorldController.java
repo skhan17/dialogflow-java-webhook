@@ -124,9 +124,9 @@ public class HelloWorldController{
 
     public ArrayList<Ticket> db(){
 
-    	Ticket t1 = new Ticket("Shyaan Khan", "SWA", "2664");
+    	Ticket t1 = new Ticket("Shyaan Khan", "WN", "2664");
 		Ticket t2 = new Ticket("Daniel Schofield", "DL", "2216");
-		Ticket t3 = new Ticket("Justin Frankert", "SWA", "2216");
+		Ticket t3 = new Ticket("Justin Frankert", "WN", "2216");
 		Ticket t4 = new Ticket("Mikayla Weiner", "UA", "2063");
 		Ticket t5 = new Ticket("Alizer Khan", "UA", "888");
 
