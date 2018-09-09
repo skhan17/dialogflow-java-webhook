@@ -88,6 +88,9 @@ public class HelloWorldController{
                     departureTime = departureDate.get("dateLocal").toString();
                     JSONObject arrivalDate = flightStatus.getJSONObject("arrivalDate");
                     arrivalTime = arrivalDate.get("dateLocal").toString(); 
+                    JSONObject resources = arrivalAirport.getJSONObject("airportResources");
+                    departureTerminal = resources.get("departureTerminal").toString();
+                    departureGate = resources.get("departureGate").toString();
                 }
 
 
