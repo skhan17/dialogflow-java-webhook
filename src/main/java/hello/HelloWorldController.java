@@ -39,7 +39,7 @@ public class HelloWorldController{
         	if(((Integer) current.get("lifespan")) == 1){
         		JSONObject params = current.getJSONObject("parameters");
         		firstName = params.get("any").toString();
-        		lastName = params.get("last-name").toString();
+        		lastName = params.get("any1").toString();
         		airlines = params.get("Airlines").toString();
         		numOfBags = params.get("number").toString();
 			}
