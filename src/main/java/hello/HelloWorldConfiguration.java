@@ -12,19 +12,6 @@ public class HelloWorldConfiguration {
 	public static ArrayList<Ticket> arrTickets;
 
 	public static void main(String[] args) throws IOException, MalformedURLException{
-
-		Ticket t1 = new Ticket("Shyaan Khan");
-		Ticket t2 = new Ticket("Daniel Schofield");
-		Ticket t3 = new Ticket("Justin Frankert");
-		Ticket t4 = new Ticket("Mikayla Weiner");
-		Ticket t5 = new Ticket("Abir Rashid");
-
-		ArrayList<Ticket> tix = new ArrayList<Ticket>();
-		tix.add(t1);
-		tix.add(t2);
-		tix.add(t3);
-		tix.add(t4);
-		tix.add(t5);
 		SpringApplication.run(HelloWorldConfiguration.class, args);
 
 	}
