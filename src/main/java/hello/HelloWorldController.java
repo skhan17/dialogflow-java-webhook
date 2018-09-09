@@ -98,7 +98,13 @@ public class HelloWorldController{
                     arrivalTime = arrivalDate.get("dateLocal").toString(); 
                     JSONObject resources = flightStatus.getJSONObject("airportResources");
                     departureTerminal = resources.get("departureTerminal").toString();
-                    departureGate = resources.get("departureGate").toString();
+                    
+                    if(resources.has("departureGate")){
+                        departureGate = resources.get("departureGate").toString();
+                    }
+                    else{
+                        departureGate = "";
+                    }
                 }
                     String formattedDepartureTime = formatTime(departureTime);
                     String formattedArrivalTime = formatTime(arrivalTime);
@@ -109,7 +115,7 @@ public class HelloWorldController{
                     arrivalAirport+" with "+airlines+" ("+ticket.airlinePrefix+" "+ticket.flightNumber+"). The flight is scheduled to depart "+formattedDepartureTime+
                     " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate+
                     ". To view more flight details, visit https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
-                        "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport+")";
+                        "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport;
 
         		break;
         	}
