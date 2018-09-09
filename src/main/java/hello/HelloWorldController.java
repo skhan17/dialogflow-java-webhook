@@ -108,7 +108,7 @@ public class HelloWorldController{
                     response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
                     arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
                     " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate+
-                    ". [Link](https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
+                    ". To view more flight details, visit https://flightaware.com/live/flight/"+ticket.airlinePrefix+"L"+ticket.flightNumber+
                         "/history/"+deptDate+"/1800Z/K"+departureAirport+"/K"+arrivalAirport+")";
 
         		break;
