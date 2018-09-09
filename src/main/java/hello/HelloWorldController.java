@@ -101,7 +101,7 @@ public class HelloWorldController{
 
         String response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
         arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
-        " and will arrive at "+formattedArrivalTime;
+        " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate;
 
 
         return new WebhookResponse(response, response);
