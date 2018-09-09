@@ -52,6 +52,8 @@ public class HelloWorldController{
 
         ArrayList<Ticket> allTickets = db();
 
+        String response = "Name not found";
+
         for(Ticket ticket: allTickets){
         	if(ticket.name.equalsIgnoreCase(firstName+" "+lastName)){
         		ticket.setAirlines(airlines);
@@ -98,22 +100,20 @@ public class HelloWorldController{
                     departureTerminal = resources.get("departureTerminal").toString();
                     departureGate = resources.get("departureGate").toString();
                 }
+                    String formattedDepartureTime = formatTime(departureTime);
+                    String formattedArrivalTime = formatTime(arrivalTime);
 
+
+                    response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
+                    arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
+                    " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate;
 
         		break;
         	}
         }
 
-        String formattedDepartureTime = formatTime(departureTime);
-        String formattedArrivalTime = formatTime(arrivalTime);
-
-
-        String response = firstName+", I've got you all checked in! You're traveling from "+departureAirport+" to "+
-        arrivalAirport+" with "+airlines+". The flight is scheduled to depart "+formattedDepartureTime+
-        " and will arrive at "+formattedArrivalTime+". Go to Terminal "+departureTerminal+" Gate "+departureGate;
-
-
         return new WebhookResponse(response, response);
+
     
     }
     
@@ -124,12 +124,11 @@ public class HelloWorldController{
 
     public ArrayList<Ticket> db(){
 
-    	Ticket t1 = new Ticket("Shyaan Khan", "UA", "4568");
+    	Ticket t1 = new Ticket("Shyaan Khan", "UA", "2363");
 		Ticket t2 = new Ticket("Daniel Schofield", "DL", "2520");
 		Ticket t3 = new Ticket("Justin Frankert", "WN", "1998");
 		Ticket t4 = new Ticket("Mikayla Weiner", "UA", "2063");
 		Ticket t5 = new Ticket("Alizer Khan", "UA", "888");
-        Ticket t6 = new Ticket("Abir Rashid", "DL", "2797");
 
 
     	ArrayList<Ticket> tix = new ArrayList<Ticket>();
@@ -138,7 +137,6 @@ public class HelloWorldController{
 		tix.add(t3);
 		tix.add(t4);
 		tix.add(t5);
-        tix.add(t6);
 		return tix;
     }
 
