@@ -83,8 +83,8 @@ public class HelloWorldController{
 					}
         		}
                 JSONObject apiJson = new JSONObject(sb.toString());
-              //  System.out.println("-----------");
-               // System.out.println(apiJson);
+                System.out.println("-----------");
+                System.out.println(apiJson);
                 JSONArray flightStatuses = apiJson.getJSONArray("flightStatuses");
                 for(int j = 0; j < flightStatuses.length(); j++){
                     JSONObject flightStatus = flightStatuses.getJSONObject(j);
@@ -129,7 +129,7 @@ public class HelloWorldController{
 		Ticket t3 = new Ticket("Justin Frankert", "WN", "1998");
 		Ticket t4 = new Ticket("Mikayla Weiner", "UA", "2063");
 		Ticket t5 = new Ticket("Alizer Khan", "UA", "888");
-        Ticket t6 = new Ticket("Abir Rashid", "DL", "5074");
+        Ticket t6 = new Ticket("Abir Rashid", "DL", "2797");
 
 
     	ArrayList<Ticket> tix = new ArrayList<Ticket>();
