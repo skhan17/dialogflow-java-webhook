@@ -63,7 +63,7 @@ public class HelloWorldController{
 
         		try{
                     String urlString = "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
-                    +ticket.airlinePrefix+"/"+ticket.flightNumber+"/dep/2018/9/8?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
+                    +ticket.airlinePrefix+"/"+ticket.flightNumber+"/dep/2018/9/10?appId=d234e79a&appKey=af4ce6fc3c6761042323676428a7d396&utc=false";
                     URL url = new URL(urlString);
                     URLConnection conn = url.openConnection();
         			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
