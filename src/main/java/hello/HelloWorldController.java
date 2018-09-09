@@ -141,7 +141,7 @@ public class HelloWorldController{
         String ampm = "";
 
         if(((Integer) time.substring(time.indexOf("T")+1, time.indexOf("T")+3)) > 12){
-            ampm = "pm"
+            ampm = "pm";
         }
         else{
             ampm = "am";
