@@ -129,7 +129,7 @@ public class HelloWorldController{
 
     	Ticket t1 = new Ticket("Shyaan Khan", "UA", "2363");
 		Ticket t2 = new Ticket("Daniel Schofield", "DL", "2520");
-		Ticket t3 = new Ticket("Justin Frankert", "SWA", "1998");
+		Ticket t3 = new Ticket("Justin Frankert", "DL", "2240");
 		Ticket t4 = new Ticket("Laura Meyer", "UA", "2063");
 		Ticket t5 = new Ticket("Alizer Khan", "UA", "888");
 
