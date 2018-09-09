@@ -16,7 +16,7 @@ public class Ticket{
 		if(airlinePrefix.equals("DL")){
 			this.airlines = "Delta Airlines";
 		}else if(airlinePrefix.equals("UA")){
-			this.airlines = "United Airlines"
+			this.airlines = "United Airlines";
 		}
 
 	}	
