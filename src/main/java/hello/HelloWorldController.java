@@ -52,7 +52,7 @@ public class HelloWorldController{
 
         ArrayList<Ticket> allTickets = db();
 
-        String response = "Name not found";
+        String response = "Sorry $any, I couldn't find your ticket. Please double check your name.";
 
         for(Ticket ticket: allTickets){
         	if(ticket.name.equalsIgnoreCase(firstName+" "+lastName)){
